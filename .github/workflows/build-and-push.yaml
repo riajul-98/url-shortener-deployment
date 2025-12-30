@@ -45,6 +45,8 @@ jobs:
 
       - name: AWS Login via OIDC
         uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Set up Trivy
         uses: aquasecurity/trivy-action@v0.10.3
