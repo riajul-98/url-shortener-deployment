@@ -30,10 +30,17 @@ module "ecs" {
   vpc_id = module.vpc.vpc_id
   alb_sg_id = module.alb.alb_sg
   alb_tg_arn = module.alb.alb_tg_arn
+  aws_region = var.region
+  ddb_table_name = module.dynamodb.dynamo_db_name
 }
 
 module "iam" {
   source = "../../modules/iam"
   environment = var.environment
   ecs_task_execution_policy_arn = var.ecs_task_execution_policy_arn
+}
+
+module "dynamodb" {
+  source = "../../modules/dynamodb"
+  environment = var.environment
 }

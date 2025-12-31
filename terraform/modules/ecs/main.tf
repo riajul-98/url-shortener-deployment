@@ -73,7 +73,7 @@ resource "aws_ecs_task_definition" "project_task_definition" {
       environment = [
         {
           name  = "TABLE_NAME"
-          value = "var.ddb_table"      # Replace with actual table name variable when created
+          value = var.ddb_table_name
         }
       ]
       logConfiguration = {

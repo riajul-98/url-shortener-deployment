@@ -62,3 +62,8 @@ variable "aws_region" {
   type = string
   description = "AWS Region"
 }
+
+variable "ddb_table_name" {
+  type = string
+  description = "DynamoDB table name"
+}
