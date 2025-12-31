@@ -6,3 +6,10 @@ module "vpc" {
   private_subnets = var.private_subnets
   region          = var.region
 }
+
+module "alb" {
+  source               = "../../modules/alb"
+  public_subnets_ids   = module.vpc.public_subnets_ids
+  environment         = var.environment
+  vpc_id               = module.vpc.vpc_id
+}
