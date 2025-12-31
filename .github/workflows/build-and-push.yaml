@@ -56,7 +56,7 @@ jobs:
       - name: Set up Trivy
         uses: aquasecurity/trivy-action@0.33.1
         with:
-          image-ref: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ vars.AWS_REGION }}.amazonaws.com/url-shortener:${{ github.sha }}
+          image-ref: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ vars.AWS_REGION }}.amazonaws.com/url-shortener:latest
           format: 'table'
           exit-code: '1'
           severity: 'CRITICAL'
