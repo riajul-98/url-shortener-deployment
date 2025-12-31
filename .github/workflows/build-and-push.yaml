@@ -33,7 +33,7 @@ jobs:
         with:
           context: ./app
           push: true
-          tags: ${{ steps.login-ecr.outputs.registry }}/url-shortener:${{ github.sha }}
+          tags: ${{ steps.login-ecr.outputs.registry }}/url-shortener:latest
 
   trivy:
     runs-on: ubuntu-latest
